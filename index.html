@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="./css/w3.css">
         <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
         <title>Главная</title>
     </head>
@@ -15,11 +14,14 @@
             <a href="javascript:void(0)">Главная</a><br />
             <a href="javascript:void(0)">Неглавная</a>
         </nav>
+        
+        <div id="overlay" onclick="nav_close()"></div>
 
         <button id="openNav" class="w3-opennav w3-xlarge w3-transparent w3-border-0" onclick="nav_open()">&#9776;</button>
-        <div id="overlay" onclick="nav_close()"></div>
-        <header>
-            <h1 class="w3-center">Абсолютно новая социальная сеть</h1>
+
+        <header class="auto-height-responsive">
+            <h1>Абсолютно новая социальная сеть</h1>
+            <img id="logo" src="./assets/flutter-icon.png" width="15%" height="15%" />
         </header>
 
         <main id = "mainPart" class="w3-main">
@@ -48,7 +50,7 @@
             </section>
             <form class="w3-container" action="javascript:;" onsubmit="form_submit()" style="max-width: 600px;">
                 <label><strong>ФИО</strong></label>
-                <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='([А-ЯA-Z]{1}[а-яa-z]+\s?){2,}' required maxlength="100"/>
+                <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='([А-ЯA-Z]{1}[а-яa-z]+\s?){2,}' required maxlength="150"/>
                 <label><strong>Ваш email</strong></label>
                 <input class="w3-input w3-border" type="email" placeholder="Пример: a@m.ru" name="email-field" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required maxlength="60">
                 <button class="w3-button w3-margin-top w3-border" type="submit">Подписаться на обновления</button>

@@ -55,7 +55,11 @@ header {
     background-image: linear-gradient(to bottom right, #87CEEB, white);
     background-repeat: no-repeat;
     background-size: 200%;
-    display: block;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 header>h1 {
@@ -79,4 +83,10 @@ header>h1 {
 .side-nav-style {
     display: none;
     z-index: 3;
+}
+
+.auto-height-responsive {
+    min-height: calc(100vh);
+    display: flex;
+    padding-top: 60px;
 }
