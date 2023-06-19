@@ -11,13 +11,13 @@
     </head>
     <body>
         <nav class="w3-sidebar w3-animate-left w3-center w3-border w3-padding-16 side-nav-style" id="sideNav">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Закрыть &times;</a>
+            <a href="javascript:void(0)" onclick="nav_close()" class="w3-closenav w3-large">Закрыть &times;</a>
             <a href="javascript:void(0)">Главная</a><br />
             <a href="javascript:void(0)">Неглавная</a>
         </nav>
 
-        <button id="openNav" class="w3-opennav w3-xlarge w3-transparent w3-border-0" onclick="w3_open()">&#9776;</button>
-        <div id="overlay" onclick="w3_close()"></div>
+        <button id="openNav" class="w3-opennav w3-xlarge w3-transparent w3-border-0" onclick="nav_open()">&#9776;</button>
+        <div id="overlay" onclick="nav_close()"></div>
         <header>
             <h1 class="w3-center">Абсолютно новая социальная сеть</h1>
         </header>
@@ -46,6 +46,13 @@
                 <ul>
                 </ul>
             </section>
+            <form class="w3-container" action="javascript:;" onsubmit="form_submit()" style="max-width: 600px;">
+                <label><strong>ФИО</strong></label>
+                <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='^[А-ЯA-Z]{1}[а-яa-z]+\s[А-ЯA-Z]{1}[а-яa-z]+' required maxlength="100"/>
+                <label><strong>Ваш email</strong></label>
+                <input class="w3-input w3-border" type="email" placeholder="Пример: a@m.ru" name="email-field" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required maxlength="60">
+                <button class="w3-button w3-margin-top w3-border" type="submit">Подписаться на обновления</button>
+            </form>
         </main>
         <footer>
             <p class="w3-center">
@@ -55,18 +62,22 @@
         </footer>
 
         <script>
-            function w3_open() {
+            function nav_open() {
                 document.getElementById("sideNav").style.display = "block";
                 document.getElementById("mainPart").style.paddingLeft = "15%";
                 document.getElementById("openNav").style.display = 'none';
                 document.getElementById("overlay").style.display = 'block';
             }
 
-            function w3_close() {
+            function nav_close() {
                 document.getElementById("sideNav").style.display = "none";
                 document.getElementById("mainPart").style.paddingLeft = "5%";
                 document.getElementById("openNav").style.display = "inline-block";
                 document.getElementById("overlay").style.display = 'none';
+            }
+            
+            function form_submit() {
+                alert('Спасибо за проявленный интерес!');
             }
         </script>
     </body>
