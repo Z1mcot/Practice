@@ -48,7 +48,7 @@
             </section>
             <form class="w3-container" action="javascript:;" onsubmit="form_submit()" style="max-width: 600px;">
                 <label><strong>ФИО</strong></label>
-                <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='^[А-ЯA-Z]{1}[а-яa-z]+\s[А-ЯA-Z]{1}[а-яa-z]+' required maxlength="100"/>
+                <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='([А-ЯA-Z]{1}[а-яa-z]+\s?){2,}' required maxlength="100"/>
                 <label><strong>Ваш email</strong></label>
                 <input class="w3-input w3-border" type="email" placeholder="Пример: a@m.ru" name="email-field" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required maxlength="60">
                 <button class="w3-button w3-margin-top w3-border" type="submit">Подписаться на обновления</button>
