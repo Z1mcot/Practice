@@ -86,7 +86,23 @@ header>h1 {
 }
 
 .auto-height-responsive {
-    min-height: calc(100vh);
-    display: flex;
-    padding-top: 60px;
+    min-height: 100vh;
+}
+
+#introduction {
+    padding: 20% 15%;
+}
+
+.feature-menu-item {
+    cursor: pointer;
+    width: 80%;
+}
+
+.feature-table {
+    column-gap: 56px;
+}
+
+.feature-desc {
+    margin: 36px 16px;
+    padding: 24px 0px;
 }
