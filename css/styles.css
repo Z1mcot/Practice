@@ -72,7 +72,8 @@ img#logo {
     max-width: 40%;
 }
 
-#overlay {
+/* TODO удалить */
+.overlay {
     position: fixed;
     display: none;
     width: 100%;
@@ -96,7 +97,7 @@ img#logo {
 }
 
 .section-top {
-    padding: 5% 15%;
+    padding: 0% 15%;
 }
 
 .section-center {
@@ -123,4 +124,9 @@ img#logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#sub-form>form {
+    max-width: 650px;
+    padding: 48px 24px;
 }

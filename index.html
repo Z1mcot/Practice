@@ -9,8 +9,8 @@
         <title>Главная</title>
     </head>
     <body>
-        <div id="overlay" onclick="nav_close()"></div>
-        
+        <div id="nav-overlay" class="w3-overlay" onclick="nav_close()"></div>
+
         <nav class="w3-sidebar w3-animate-left w3-center w3-border w3-padding-16 side-nav-style" id="sideNav">
             <a href="javascript:void(0)" onclick="nav_close()" class="w3-closenav w3-large">Закрыть &times;</a>
             <a href="#introduction" onclick="nav_close()">Вступление</a><br />
@@ -35,7 +35,7 @@
             </section>
 
             <section id="features" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-center">
-                <h2 class="text">О функциональных возможностях приложения</h2>
+                <h2 class="w3-text">О функциональных возможностях приложения</h2>
                 <table class="w3-table w3-large">
                     <tbody>
                         <tr>
@@ -54,40 +54,45 @@
                             </td>
                             <td class="feature-desc">
                                 <div id="desc-crossplatform-feature">
-                                    <img src="./assets/crossplatform-icon.png" id="pic-crossplatform-feature" class="w3-image feature-image" />
+                                    <img src="./assets/crossplatform-icon.png" class="w3-image feature-image" />
                                     <p>Наше приложение доступно для устройств под управлением iOS и Android</p>
                                 </div>
                                 <div id="desc-upload-feature" style="display: none;">
-                                    <img src="./assets/upload-icon.png" id="pic-crossplatform-feature" class="w3-image feature-image" />
+                                    <img src="./assets/upload-icon.png" class="w3-image feature-image" />
                                     <p>Делитесь своими впечатляниями и воспоминаниями с аудиторией по всему свету</p>
                                 </div>
                                 <div id="desc-reactions-feature" style="display: none;">
-                                    Рандомное описание с картинкой 3
+                                    <img src="./assets/like-icon.png" class="w3-image feature-image" />
+                                    <p>Делитесь мнением о публикациях пользователей и обменивайтесь идеями</p>
                                 </div> 
                             </td> 
                         </tr>
                     </tbody>
                 </table>
- 
-                <!--<ul class="w3-ul w3-text">
-                    <li>Кроссплатформенность</li>
-                    <li>Загрузка фотографий</li>
-                    <li>Комментарии и реакции</li>
-                </ul> -->
-
-                
-
             </section>
             
             <section id="subscribe" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-center">
-                <form class="w3-container" action="javascript:;" onsubmit="form_submit()" style="max-width: 600px;">
-                    <label><strong>ФИО</strong></label>
-                    <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='([А-ЯA-Z]{1}[а-яa-z]+\s?){2,}' required maxlength="150"/>
-                    <label><strong>Ваш email</strong></label>
-                    <input class="w3-input w3-border" type="email" placeholder="Пример: a@m.ru" name="email-field" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required maxlength="60">
-                    <button class="w3-button w3-margin-top w3-border" type="submit">Подписаться на обновления</button>
-                </form>
+                <h2 class="w3-text">Станьте частью нашего проекта</h2>
+                <p class="w3-text">Если вас заинтересовал ваш проект — нажмите по кнопке ниже и оставьте заявку на получение доступа</p>
+                <button class="w3-button w3-hover-blue w3-white w3-border" onclick="show_subscription_modal()">Оставить заявку</button>
+                
+                <div id="sub-form" class="w3-modal" onclick="close_modal()">
+                    <form id="sub-form-content" class="w3-modal-content w3-container w3-animate-zoom" action="javascript:;" onsubmit="form_submit()">
+                        <label><strong>ФИО</strong></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='([А-ЯA-Z]{1}[а-яa-z]+\s?){2,}' required maxlength="150"/>
+                        <label><strong>Ваш email</strong></label>
+                        <input class="w3-input w3-border" type="email" placeholder="Пример: a@m.ru" name="email-field" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required maxlength="60">
+                        <label><strong>Платформа</strong></label>
+                        <select class="w3-select w3-padding" name="platform-selection">
+                            <option value="" disabled selected>Выберите свою платформу</option>
+                            <option value="ios">iOS</option>
+                            <option value="android">Andriod</option>
+                        </select>
+                        <button class="w3-button w3-margin-top w3-border" type="submit">Подписаться на обновления</button>
+                    </form>
+                </div>
             </section>
+
         </main>
         <footer>
             <p class="w3-center">
@@ -103,14 +108,14 @@
                 document.getElementById("sideNav").style.display = "block";
                 document.getElementById("mainPart").style.paddingLeft = "15%";
                 document.getElementById("openNav").style.display = 'none';
-                document.getElementById("overlay").style.display = 'block';
+                document.getElementById("nav-overlay").style.display = 'block';
             }
 
             function nav_close() {
                 document.getElementById("sideNav").style.display = "none";
                 document.getElementById("mainPart").style.paddingLeft = "5%";
                 document.getElementById("openNav").style.display = "inline-block";
-                document.getElementById("overlay").style.display = 'none';
+                document.getElementById("nav-overlay").style.display = 'none';
             }
             
             function form_submit() {
@@ -122,7 +127,17 @@
                 for(i = 0; i < featureButtons.length; i++) {
                     featureButtons[i].style.display = id == i ? "table-cell" : "none";
                 }
+            }
 
+            function show_subscription_modal() {
+                document.getElementById("sub-form").style.display = "block";
+            }
+
+            function close_modal() {
+                const subModal = document.getElementById("sub-form-content");
+                if (!subModal.contains(event.target)) {
+                    document.getElementById("sub-form").style.display = "none";
+                }
             }
         </script>
     </body>
