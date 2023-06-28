@@ -66,6 +66,12 @@ header>h1 {
     padding: 150px 100px;
 }
 
+img#logo {
+    margin-right: 48px;
+    min-width: 100px;
+    max-width: 40%;
+}
+
 #overlay {
     position: fixed;
     display: none;
@@ -85,11 +91,15 @@ header>h1 {
     z-index: 3;
 }
 
-.auto-height-responsive {
+.auto-height-fullscreen {
     min-height: 100vh;
 }
 
-#introduction {
+.section-top {
+    padding: 5% 15%;
+}
+
+.section-center {
     padding: 20% 15%;
 }
 
@@ -100,9 +110,17 @@ header>h1 {
 
 .feature-table {
     column-gap: 56px;
+    max-width: 600px;
 }
 
 .feature-desc {
     margin: 36px 16px;
     padding: 24px 0px;
+    max-width: 400px;
+}
+
+.feature-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

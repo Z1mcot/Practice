@@ -9,6 +9,8 @@
         <title>Главная</title>
     </head>
     <body>
+        <div id="overlay" onclick="nav_close()"></div>
+        
         <nav class="w3-sidebar w3-animate-left w3-center w3-border w3-padding-16 side-nav-style" id="sideNav">
             <a href="javascript:void(0)" onclick="nav_close()" class="w3-closenav w3-large">Закрыть &times;</a>
             <a href="#introduction" onclick="nav_close()">Вступление</a><br />
@@ -16,34 +18,44 @@
             <a href="#subscribe" onclick="nav_close()">Оставить заявку</a>
         </nav>
         
-        <div id="overlay" onclick="nav_close()"></div>
-
         <button id="openNav" class="w3-opennav w3-xlarge w3-transparent w3-border-0" onclick="nav_open()">&#9776;</button>
 
-        <header class="auto-height-responsive">
+        <header class="auto-height-fullscreen">
             <h1>Абсолютно новая социальная сеть</h1>
-            <img id="logo" src="./assets/flutter-icon.png" width="15%" height="15%" />
+            <img id="logo" src="./assets/flutter-icon.png" />
         </header>
 
         <main id = "mainPart" class="w3-main">
-            <section id="introduction" class="w3-margin-top w3-margin-bottom auto-height-responsive">               
+            <section id="introduction" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-top">               
                 <h2 class="w3-text">"Клон Инстаграма"</h2>
                 <p class="w3-text ">
                     — новое веяние в мире социальных сетей. Станьте одним из первых, кто сможет прикоснуться к будущему. 
                 </p>
+                <img src="./assets/futuristic-shit.png" class="w3-img" />
             </section>
 
-            <section id="features" class="w3-margin-top w3-margin-bottom auto-height-responsive">
+            <section id="features" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-center">
                 <h2 class="text">О функциональных возможностях приложения</h2>
                 <table class="w3-table w3-large">
                     <tbody>
                         <tr>
-                            <td id="crossplatform-feature" class="w3-col w3-hover-blue feature-menu-item" onclick="feature_click(0)">
-                                Кроссплатформенность        
+                            <td class="w3-col">
+                                <ul class="w3-ul w3-text">
+                                    <li id="crossplatform-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(0)">
+                                        Кроссплатформенность
+                                    </li>
+                                    <li id="upload-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(1)">
+                                        Загрузка фотографий
+                                    </li>
+                                    <li id="reactions-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(2)">
+                                        Комментарии и реакции
+                                    </li>
+                                </ul>      
                             </td>
-                            <td class="feature-desc" rowspan="3">
+                            <td class="feature-desc">
                                 <div id="desc-crossplatform-feature">
-                                    Рандомное описание с картинкой 1
+                                    <img src="./assets/crossplatform-icon.png" id="pic-crossplatform-feature" class="w3-image feature-image" />
+                                    <p>Наше приложение доступно для устройств под управлением iOS и Android</p>
                                 </div>
                                 <div id="desc-upload-feature" style="display: none;">
                                     Рандомное описание с картинкой 2
@@ -51,30 +63,22 @@
                                 <div id="desc-reactions-feature" style="display: none;">
                                     Рандомное описание с картинкой 3
                                 </div> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="upload-feature" class="w3-col w3-hover-blue feature-menu-item" onclick="feature_click(1)">
-                                Загрузка фотографий
-                            </td>          
-                        </tr>
-                        <tr>
-                            <td id="reactions-feature" class="w3-col w3-hover-blue feature-menu-item" onclick="feature_click(2)">
-                                Комментарии и реакции
-                            </td>   
+                            </td> 
                         </tr>
                     </tbody>
                 </table>
-                <!-- 
-                <ul class="w3-ul w3-text">
+ 
+                <!--<ul class="w3-ul w3-text">
                     <li>Кроссплатформенность</li>
                     <li>Загрузка фотографий</li>
                     <li>Комментарии и реакции</li>
-                </ul>
-                -->
+                </ul> -->
+
+                
+
             </section>
             
-            <section id="subscribe" class="w3-margin-top w3-margin-bottom auto-height-responsive">
+            <section id="subscribe" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-center">
                 <form class="w3-container" action="javascript:;" onsubmit="form_submit()" style="max-width: 600px;">
                     <label><strong>ФИО</strong></label>
                     <input class="w3-input w3-border" type="text" placeholder="Пример: Иванов Иван Иванович" name="fullname-field" pattern='([А-ЯA-Z]{1}[а-яa-z]+\s?){2,}' required maxlength="150"/>
