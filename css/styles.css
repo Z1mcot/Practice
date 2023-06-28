@@ -169,3 +169,7 @@ img#logo {
     max-width: 650px;
     padding: 48px 24px;
 }
+
+li {
+    word-wrap: break-word;
+}
