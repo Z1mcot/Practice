@@ -36,12 +36,12 @@
 
             <section id="features" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-center">
                 <h2 class="w3-text">О функциональных возможностях приложения</h2>
-                <table class="w3-table w3-large">
+                <!--<table class="w3-table w3-large">
                     <tbody>
                         <tr>
                             <td class="w3-col">
                                 <ul class="w3-ul w3-text">
-                                    <li id="crossplatform-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(0)">
+                                    <li id="crossplatform-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(0)" style="background-color: #87CEEB;">
                                         Кроссплатформенность
                                     </li>
                                     <li id="upload-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(1)">
@@ -68,7 +68,35 @@
                             </td> 
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
+                <div class="w3-large">
+                    <ul class="w3-ul w3-text col-4 col-m-12">
+                        <li id="crossplatform-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(0)" style="background-color: #87CEEB;">
+                            Кроссплатформенность
+                        </li>
+                        <li id="upload-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(1)">
+                            Загрузка фотографий
+                        </li>
+                        <li id="reactions-feature" class="w3-hover-blue feature-menu-item" onclick="feature_click(2)">
+                            Комментарии и реакции
+                        </li>
+                    </ul> 
+    
+                    <aside class="col-5 col-m-12">
+                        <div id="desc-crossplatform-feature">
+                            <img src="./assets/crossplatform-icon.png" class="w3-image feature-image" />
+                            <p>Наше приложение доступно для устройств под управлением iOS и Android</p>
+                        </div>
+                        <div id="desc-upload-feature" style="display: none;">
+                            <img src="./assets/upload-icon.png" class="w3-image feature-image" />
+                            <p>Делитесь своими впечатляниями и воспоминаниями с аудиторией по всему свету</p>
+                        </div>
+                        <div id="desc-reactions-feature" style="display: none;">
+                            <img src="./assets/like-icon.png" class="w3-image feature-image" />
+                            <p>Делитесь мнением о публикациях пользователей и обменивайтесь идеями</p>
+                        </div> 
+                    </aside>
+                </div>
             </section>
             
             <section id="subscribe" class="w3-margin-top w3-margin-bottom auto-height-fullscreen section-center">
@@ -102,7 +130,8 @@
         </footer>
 
         <script>
-            const featureButtons = [document.getElementById('desc-crossplatform-feature'), document.getElementById('desc-upload-feature'), document.getElementById('desc-reactions-feature')];
+            const featureButtons = [document.getElementById('crossplatform-feature'), document.getElementById('upload-feature'), document.getElementById('reactions-feature')]
+            const featureDescriptions = [document.getElementById('desc-crossplatform-feature'), document.getElementById('desc-upload-feature'), document.getElementById('desc-reactions-feature')];
 
             function nav_open() {
                 document.getElementById("sideNav").style.display = "block";
@@ -124,8 +153,9 @@
 
             function feature_click(id) {
                 console.log(id);
-                for(i = 0; i < featureButtons.length; i++) {
-                    featureButtons[i].style.display = id == i ? "table-cell" : "none";
+                for(i = 0; i < featureDescriptions.length; i++) {
+                    featureButtons[i].style.backgroundColor = id == i ? "#87CEEB" : "#fff";
+                    featureDescriptions[i].style.display = id == i ? "table-cell" : "none";
                 }
             }
 
