@@ -97,7 +97,7 @@ nav>a {
 }
 
 header {
-    background-image: linear-gradient(to bottom right, #87CEEB, white);
+    background-image: linear-gradient(to bottom, #87CEEB, white);
     background-repeat: no-repeat;
     background-size: 200%;
     align-items: center;
